@@ -8,23 +8,24 @@ import config
 
 
 def save_mock_data():
-    path ="/mock_data"
-    index = 0
+    path = os.path.join(os.getcwd(), "mock_data")  # relativer Pfad
+    engine = create_engine(
+        f'postgresql+psycopg2://{config.db_user_name}:{config.db_user_password}@localhost/{config.db_name}'
+    )
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    for file in os.listdir(path): 
+    for index, file in enumerate(os.listdir(path)):
+        file_path = os.path.join(path, file)
+        with open(file_path, "rb") as f:
+            encoded_string = base64.b64encode(f.read()).decode("utf-8")
 
-        encoded_string = base64.b64encode(file.read()).decode("utf-8")
-        new_image = Basis(id = index, image_name = file, image = encoded_string)
-
-
-        # active db: 
-        engine = create_engine(f'postgresql+psycopg2://{config.db_user_name}:{config.db_user_password}@localhost/{config.db_name}')
-        Session = sessionmaker(bind=engine)
-        session = Session()
-
+        new_image = Basis(id=str(index), image_name=file, image=encoded_string)
         session.add(new_image)
-        session.commit()
 
-if __name__ == "__main__": 
+    session.commit()
+    session.close()
+    print("all pics saved in db")
 
+if __name__ == "__main__":
     save_mock_data()
