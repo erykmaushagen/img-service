@@ -1,0 +1,6 @@
+direction;id;nve;location;timestamp;link_bilder
+outbound;5281f034-e79d-4fe5-a3ae-9fb2841b7cde;340258762443211720;xy1;Wed, 01 Oct 2025 00:03:53 GMT;http://localhost:5000/api/5281f034-e79d-4fe5-a3ae-9fb2841b7cde/raw
+outbound;0bb28536-105b-420c-9e00-f0368d1a3dc9;340258762443210907;xy2;Wed, 01 Oct 2025 00:03:52 GMT;http://localhost:5000/api/0bb28536-105b-420c-9e00-f0368d1a3dc9/raw
+outbound;d889a2a9-b756-447c-a6fc-b0b971fd6a97;340258762443211752;xy2;Wed, 01 Oct 2025 00:03:52 GMT;http://localhost:5000/api/d889a2a9-b756-447c-a6fc-b0b971fd6a97/raw
+outbound;0bb28536-105b-420c-9e00-f0368d1a3dc9;340258762443211200;xy3;Wed, 01 Oct 2025 00:03:51 GMT;http://localhost:5000/api/0bb28536-105b-420c-9e00-f0368d1a3dc9/raw
+inbound;5281f034-e79d-4fe5-a3ae-9fb2841b7cde;340258762443211200;xy1;Wed, 01 Oct 2025 00:03:49 GMT;http://localhost:5000/api/5281f034-e79d-4fe5-a3ae-9fb2841b7cde/raw
