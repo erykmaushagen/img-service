@@ -15,5 +15,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = (
 db.init_app(app) # db in flask integrieren, verwendet dabei 
 
 with app.app_context(): # tabellen erstellen
+    # db.drop_all()
     db.create_all()
     print("✅ Tabellen erfolgreich in der Datenbank erstellt.")
